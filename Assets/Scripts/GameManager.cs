@@ -10,11 +10,12 @@ public class GameManager : MonoBehaviour
     public Transform spawn_point;
     public GameObject instruction_ui;
     public GameObject timer_ui;
+    public GameObject score_ui;
     public TextMeshProUGUI seconds_left;
     public float max_x;
     public float rod_timer = 0;
-    public float seconds = 100;
     public float action = 50;
+    public float seconds = 100;
     //Private
     private float additive;
     private bool first_time= true;
@@ -24,6 +25,7 @@ public class GameManager : MonoBehaviour
         additive = action;
         instruction_ui.SetActive(true);
         timer_ui.SetActive(false);
+        score_ui.SetActive(false);
         seconds_left.text = seconds.ToString();
     }
     // Update is called once per frame
@@ -39,6 +41,7 @@ public class GameManager : MonoBehaviour
                 {
                     instruction_ui.SetActive(false);
                     timer_ui.SetActive(true);
+                    score_ui.SetActive(true);
                     first_time = false;
                 }
             }
@@ -63,6 +66,11 @@ public class GameManager : MonoBehaviour
         Vector3 spawnPos = spawn_point.position;
         spawnPos.x = Random.Range(-max_x, max_x);
         Instantiate(rod,spawnPos, Quaternion.identity);
+    }
+
+    public void setMinigameFailed(bool value)
+    {
+        minigame_over = value;
     }
 
 }
