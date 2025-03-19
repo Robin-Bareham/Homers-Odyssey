@@ -30,18 +30,6 @@ public class Player : MonoBehaviour
             
             //Snaps to mouse pos
             rb.MovePosition(touchPos);
-            
-            //Gradually moves to mouse pos
-            
-            //if (touchPos.x < 0)
-            //{
-
-            //  rb.AddForce(Vector2.left * moveSpeed);            
-            //}
-            //else
-            //{
-            //    rb.AddForce(Vector2.right * moveSpeed);
-            //}
         }
         
     }

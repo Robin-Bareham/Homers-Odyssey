@@ -13,6 +13,8 @@ public class Rod : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (gameManager.getMinigameOver()) 
+        { Destroy(gameObject); }
         if(transform.position.y < -7f) 
         {
             Destroy(gameObject);

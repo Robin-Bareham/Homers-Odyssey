@@ -16,10 +16,13 @@ public class GameManager : MonoBehaviour
     public float rod_timer = 0;
     public float action = 50;
     public float seconds = 100;
+    public LifeSystem life_system;
     //Private
     private float additive;
     private bool first_time= true;
     private bool minigame_over = false;
+    private bool won = false;
+    private int lives = 3;
     private void Start()
     {
         additive = action;
@@ -33,13 +36,15 @@ public class GameManager : MonoBehaviour
     {
         if (!minigame_over) 
         {
+            if (rod_timer > 3) 
+            { instruction_ui.SetActive(false); }
             if (rod_timer > action)
             {
                 spawnRod();
                 action += additive;
                 if (first_time)
                 {
-                    instruction_ui.SetActive(false);
+                    
                     timer_ui.SetActive(true);
                     score_ui.SetActive(true);
                     first_time = false;
@@ -54,6 +59,7 @@ public class GameManager : MonoBehaviour
                 {
                     seconds_left.text = "0";
                     minigame_over = true;
+                    won = true;
                 }
             }
             rod_timer += Time.deltaTime; //Increases rod timer
@@ -71,6 +77,18 @@ public class GameManager : MonoBehaviour
     public void setMinigameFailed(bool value)
     {
         minigame_over = value;
+        if(value == true)
+        {
+            life_system.changeLives(lives);
+            lives--;
+            //Move scene onto next game
+        }
     }
 
+    public bool getMinigameOver() { return minigame_over; }
+
+    public bool getWon() { return won; }
+    public int getLives() { return lives; }
+    
+    public void setLives(int temp_lives) { lives = temp_lives; }
 }
