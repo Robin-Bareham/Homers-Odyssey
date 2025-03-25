@@ -33,6 +33,7 @@ public class LifeSystem : MonoBehaviour
 
     public void changeLives(int current_lives) 
     {
+        //Potential spot to add sound file of losing a heart (Not sure because you can also gain hearts with the function)
         if (current_lives == 1)
         {
             heart1.enabled = false;

@@ -19,14 +19,16 @@ public class Rod : MonoBehaviour
         {
             Destroy(gameObject);
             failed = true;
-            gameManager.setMinigameFailed(true);
+            gameManager.setMinigameFailed(true); //Alerts GameManager minigame has failed
         }
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.tag == "Player")
         {
-            Destroy(gameObject);
+            Destroy(gameObject); //Destroys rods on contact
+
+            //Another potential spot to add sound file of rods being collected
         }
     }
 

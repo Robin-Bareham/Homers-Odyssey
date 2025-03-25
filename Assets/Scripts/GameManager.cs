@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
+    //Public:
     public GameObject rod;
     public Transform spawn_point;
     public GameObject instruction_ui;
@@ -17,7 +18,7 @@ public class GameManager : MonoBehaviour
     public float action = 50;
     public float seconds = 100;
     public LifeSystem life_system;
-    //Private
+    //Private:
     private float additive;
     private bool first_time= true;
     private bool minigame_over = false;

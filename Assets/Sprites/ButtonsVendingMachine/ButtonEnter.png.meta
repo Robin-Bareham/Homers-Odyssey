@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 211982c8ffea29643be23e9eddf749c9
+guid: d33116e5b4a29a943acd354be3c32ac9
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 3539517282536894737
-    second: Rod_0
+      213: 1907386832519550359
+    second: ButtonEnter_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -84,7 +84,7 @@ TextureImporter:
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
-    buildTarget: Standalone
+    buildTarget: WebGL
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -97,7 +97,7 @@ TextureImporter:
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
-    buildTarget: WebGL
+    buildTarget: Standalone
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -165,13 +165,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Rod_0
+      name: ButtonEnter_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 13
-        height: 28
+        x: 45
+        y: 42
+        width: 219
+        height: 220
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -179,8 +179,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 111b7fd1734ee1130800000000000000
-      internalID: 3539517282536894737
+      spriteID: 795d599e736687a10800000000000000
+      internalID: 1907386832519550359
       vertices: []
       indices: 
       edges: []
@@ -195,8 +195,7 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable:
-      Rod_0: 3539517282536894737
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

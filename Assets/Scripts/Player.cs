@@ -40,6 +40,8 @@ public class Player : MonoBehaviour
         {
             score++;
             score_text.text = score.ToString();
+            
+            //Potential spot to add sounds of rods being collected
         }
     }
 }
