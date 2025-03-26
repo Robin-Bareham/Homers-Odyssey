@@ -12,8 +12,7 @@ public class VMHub : MonoBehaviour
     public LifeSystem Playerlives;
     public TimeSystem Playertime;
     public TextMeshProUGUI DisplayTimer;
-    private int timer= 10;
-    private float TempTimer = 0f;
+    public VMButtons button;
     private bool GameOver;
      
 
@@ -33,31 +32,17 @@ public class VMHub : MonoBehaviour
             Playertime.updateTimer(); //Updates countdown
 
             DisplayTimer.text = "Seconds left: " + Playertime.getIntTime().ToString();
+
+            if(Playertime.getIntTime() <= 0)
+            {
+                VendingMachineFailed();
+                Playerlives.changeLives(1); //Loses a life (Substitude the parameter with the returned lives from different scenes.
+            }
         }
         
     }
 
-    /*private void Countdown() 
-    {
-        TempTimer += Time.deltaTime;
-
-        if(TempTimer >= 1f) //Checks if a second has passed
-        {
-            if (timer >= 0) //If the timer is above 0 
-            {
-                timer -= 1; TempTimer = 0f; //Counts down + resets second.
-                DisplayTimer.text = "Seconds left: " + timer; //Displays the timer
-            }
-            else
-            {
-                DisplayTimer.text = "You lose!" + timer;
-                GameOver = true; //Player loses
-            }
-        }
-        //Else the suborutine does nothing until TempTime has reached/passed a second
-    }*/
-
-    public void ButtonFailed() //A seperate button script will run this in the event they pressed the entered number
+    public void VendingMachineFailed() //A seperate button script will run this in the event they pressed the entered number
     {
         GameOver = true;
         Debug.Log("Vending machine minigame failed!");

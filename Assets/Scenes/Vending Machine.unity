@@ -1333,6 +1333,7 @@ MonoBehaviour:
   Playerlives: {fileID: 1188715116}
   Playertime: {fileID: 539363406}
   DisplayTimer: {fileID: 604309830}
+  button: {fileID: 875495275}
 --- !u!212 &702292631
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1548,6 +1549,51 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 737467186}
   m_CullTransparentMesh: 1
+--- !u!1 &875495274
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 875495276}
+  - component: {fileID: 875495275}
+  m_Layer: 0
+  m_Name: Button Holder
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &875495275
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 875495274}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1437c742e448fa648a8dd0fd59a92078, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  DisplayText: {fileID: 1917325760}
+--- !u!4 &875495276
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 875495274}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 690.5639, y: 385.8632, z: -7.0322676}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1025154575 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 2770530497465447587, guid: 12275245dc440cd49b45ae641be1d76c, type: 3}
@@ -2493,7 +2539,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1479992607}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 95b324b61b2ab994d8ba3825e4d58ce4, type: 3}
   m_Name: 
@@ -2501,6 +2547,7 @@ MonoBehaviour:
   Playerlives: {fileID: 0}
   Playertime: {fileID: 0}
   DisplayTimer: {fileID: 0}
+  button: {fileID: 0}
 --- !u!1 &1697488480
 GameObject:
   m_ObjectHideFlags: 0
@@ -2962,3 +3009,4 @@ SceneRoots:
   - {fileID: 1239058098}
   - {fileID: 1240171094}
   - {fileID: 1108676459}
+  - {fileID: 875495276}

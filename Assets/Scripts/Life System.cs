@@ -35,12 +35,14 @@ public class LifeSystem : MonoBehaviour
     public void changeLives(int current_lives) 
     {
         lives = current_lives; 
-        //Potential spot to add sound file of losing a heart (Not sure because you can also gain hearts with the function)
+        //For later: Potential spot to add sound file of losing a heart (Not sure because you can also gain hearts with the function)
+
+        //IMPORTANT: Start from 1 then go to 3 (the hearts will be detracted in that order)
         if (current_lives == 1)
         {
             heart1.enabled = false;
             heart_gone1.enabled = true;
-            //end the whole game
+            
         }
         else if (current_lives == 2)
         {

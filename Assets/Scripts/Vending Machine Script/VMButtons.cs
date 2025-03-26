@@ -42,7 +42,7 @@ public class VMButtons : MonoBehaviour
         char ButtonChar = ObjectName.ToCharArray()[ObjectName.Length - 1]; //Converts the last name of the button's name into a character
         int ButtonNumb= ButtonChar - '0'; //Then into an int
 
-        //Debug.Log(ButtonNumb); 
+        Debug.Log(ButtonNumb); 
 
         if (DisplayText.text.Length < 4) //Caps max display number at 4 digits (Subject to change later)
         {
