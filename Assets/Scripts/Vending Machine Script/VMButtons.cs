@@ -21,52 +21,54 @@ public class VMButtons : MonoBehaviour
         
     }
     */
+    public VMHub VM_Hub;
     public TextMeshProUGUI DisplayText;
 
-    public void DoThing()
+    public void DoThing() //Ignore this
     {
         Debug.Log("HELLO");
         Console.WriteLine("Did one thing");
     }
 
-    public void DoAnother()
+    public void DoAnother() //Ignore this
     {
         Debug.Log("GOODBYE");
         Console.WriteLine("Did another thing");
     }
 
-    public void NumberInput()
+    public void NumberInput() //Runs the subroutine if the vending machine button is a number
     {
         string ObjectName = gameObject.name.ToString(); //Get's the Button's name
-        char ButtonChar = ObjectName.ToCharArray()[ObjectName.Length - 1]; //Converts the last name of the button name it into a character
+        char ButtonChar = ObjectName.ToCharArray()[ObjectName.Length - 1]; //Converts the last name of the button's name into a character
         int ButtonNumb= ButtonChar - '0'; //Then into an int
 
-        Debug.Log(ButtonNumb);
+        //Debug.Log(ButtonNumb); 
 
-        if (DisplayText.text.Length < 4) //Caps it at 4 digits (Subject to change later)
+        if (DisplayText.text.Length < 4) //Caps max display number at 4 digits (Subject to change later)
         {
-            DisplayText.text += ButtonNumb.ToString(); //Converts then adds the digit to the DisplayText
+            DisplayText.text += ButtonNumb.ToString(); //Converts then adds the digit to the Display panel on the vending machine
         }
 
     }
 
-    public void Clear()
+    public void Clear() //Self explanatory
     {
-
         DisplayText.text = "";
     }
 
-    public void Enter()
+    public void Enter() //Self explanatory
     {
         string TheRightCode="";
 
         if (DisplayText.text.Equals(TheRightCode)) //Wins the minigame!
         {
             Debug.Log("Vending machine minigame won!");
+          
         }
         else //Loses the minigame!
         {
-            Debug.Log("Vending machine minigame failed!");
+            Debug.Log("Potential loss?");
+            VM_Hub.ButtonFailed();
         }
 
     }

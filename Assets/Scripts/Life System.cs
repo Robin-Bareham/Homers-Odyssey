@@ -14,6 +14,7 @@ public class LifeSystem : MonoBehaviour
     public Image heart_gone1;
     public Image heart_gone2;
     public Image heart_gone3;
+    private int lives;
 
     // Start is called before the first frame update
     void Start()
@@ -33,6 +34,7 @@ public class LifeSystem : MonoBehaviour
 
     public void changeLives(int current_lives) 
     {
+        lives = current_lives; 
         //Potential spot to add sound file of losing a heart (Not sure because you can also gain hearts with the function)
         if (current_lives == 1)
         {
@@ -45,11 +47,16 @@ public class LifeSystem : MonoBehaviour
             heart2.enabled = false;
             heart_gone2.enabled = true;
         }
-        else if (current_lives == 3)
+        else if (current_lives == 3) 
         {
             heart3.enabled = false;
             heart_gone3.enabled = true;
-
         }
+        
+    }
+
+    public int getLives()
+    {
+        return lives;
     }
 }
