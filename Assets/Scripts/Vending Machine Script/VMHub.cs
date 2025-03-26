@@ -14,14 +14,15 @@ public class VMHub : MonoBehaviour
     public TextMeshProUGUI DisplayTimer;
     private int timer= 10;
     private float TempTimer = 0f;
-    private bool GameOver = false;
+    private bool GameOver;
      
 
     
     // Start is called before the first frame update
     void Start()
-    {       
-        
+    {
+        GameOver = false;
+        Playertime.setTime(10);
     }
 
     // Update is called once per frame
@@ -30,7 +31,8 @@ public class VMHub : MonoBehaviour
         while (GameOver == false)
         {
             Playertime.updateTimer(); //Updates countdown
-            DisplayTimer.text = "Seconds left: " + Playertime.getIntTime();
+
+            DisplayTimer.text = "Seconds left: " + Playertime.getIntTime().ToString();
         }
         
     }
