@@ -7,22 +7,12 @@ using UnityEngine;
 using TMPro;
 using JetBrains.Annotations;
 
+
 public class VMButtons : MonoBehaviour
 {
-    /* Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-    */
-    
+    public VMHub VendingMachineHub;
     public TextMeshProUGUI DisplayText;
+    
 
     public void DoThing() //Ignore this
     {
@@ -58,19 +48,11 @@ public class VMButtons : MonoBehaviour
 
     public void Enter() //Self explanatory
     {
-        string TheRightCode="";
-
-        if (DisplayText.text.Equals(TheRightCode)) //Wins the minigame!
-        {
-            Debug.Log("Vending machine minigame won!");
-          
-        }
-        else //Loses the minigame!
-        {
-            Debug.Log("Potential loss?");
-            
-        }
+        int digits = Convert.ToInt32(DisplayText.text); //Converts it to int
+        VendingMachineHub.PressedEnter(digits); //Sends it to the VMHub
 
     }
+
+   
 
 }

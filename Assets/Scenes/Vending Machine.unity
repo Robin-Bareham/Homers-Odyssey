@@ -238,6 +238,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1437c742e448fa648a8dd0fd59a92078, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  VendingMachineHub: {fileID: 702292630}
   DisplayText: {fileID: 1917325760}
 --- !u!114 &139173177
 MonoBehaviour:
@@ -384,6 +385,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1437c742e448fa648a8dd0fd59a92078, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  VendingMachineHub: {fileID: 702292630}
   DisplayText: {fileID: 1917325760}
 --- !u!114 &274379509
 MonoBehaviour:
@@ -530,6 +532,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1437c742e448fa648a8dd0fd59a92078, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  VendingMachineHub: {fileID: 702292630}
   DisplayText: {fileID: 1917325760}
 --- !u!114 &284261478
 MonoBehaviour:
@@ -676,6 +679,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1437c742e448fa648a8dd0fd59a92078, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  VendingMachineHub: {fileID: 702292630}
   DisplayText: {fileID: 1917325760}
 --- !u!114 &402650246
 MonoBehaviour:
@@ -897,6 +901,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1437c742e448fa648a8dd0fd59a92078, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  VendingMachineHub: {fileID: 702292630}
   DisplayText: {fileID: 1917325760}
 --- !u!114 &504291721
 MonoBehaviour:
@@ -1054,6 +1059,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1437c742e448fa648a8dd0fd59a92078, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  VendingMachineHub: {fileID: 702292630}
   DisplayText: {fileID: 1917325760}
 --- !u!114 &563357675
 MonoBehaviour:
@@ -1333,7 +1339,7 @@ MonoBehaviour:
   Playerlives: {fileID: 1188715116}
   Playertime: {fileID: 539363406}
   DisplayTimer: {fileID: 604309830}
-  button: {fileID: 875495275}
+  PanelButton: {fileID: 875495275}
 --- !u!212 &702292631
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1396,9 +1402,9 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 702292629}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -9.616, y: 6.149, z: 0}
-  m_LocalScale: {x: 0.1, y: 0.1, z: 1}
+  m_LocalScale: {x: 0.099999994, y: 0.099999994, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -1454,6 +1460,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1437c742e448fa648a8dd0fd59a92078, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  VendingMachineHub: {fileID: 702292630}
   DisplayText: {fileID: 1917325760}
 --- !u!114 &737467189
 MonoBehaviour:
@@ -1578,6 +1585,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1437c742e448fa648a8dd0fd59a92078, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  VendingMachineHub: {fileID: 0}
   DisplayText: {fileID: 1917325760}
 --- !u!4 &875495276
 Transform:
@@ -1724,6 +1732,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1437c742e448fa648a8dd0fd59a92078, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  VendingMachineHub: {fileID: 702292630}
   DisplayText: {fileID: 1917325760}
 --- !u!114 &1149758443
 MonoBehaviour:
@@ -1881,6 +1890,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1437c742e448fa648a8dd0fd59a92078, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  VendingMachineHub: {fileID: 702292630}
   DisplayText: {fileID: 1917325760}
 --- !u!114 &1227326648
 MonoBehaviour:
@@ -2205,6 +2215,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1437c742e448fa648a8dd0fd59a92078, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  VendingMachineHub: {fileID: 702292630}
   DisplayText: {fileID: 1917325760}
 --- !u!114 &1330151984
 MonoBehaviour:
@@ -2547,7 +2558,7 @@ MonoBehaviour:
   Playerlives: {fileID: 0}
   Playertime: {fileID: 0}
   DisplayTimer: {fileID: 0}
-  button: {fileID: 0}
+  PanelButton: {fileID: 0}
 --- !u!1 &1697488480
 GameObject:
   m_ObjectHideFlags: 0
@@ -2599,6 +2610,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1437c742e448fa648a8dd0fd59a92078, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  VendingMachineHub: {fileID: 702292630}
   DisplayText: {fileID: 1917325760}
 --- !u!114 &1697488483
 MonoBehaviour:
@@ -2892,6 +2904,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1437c742e448fa648a8dd0fd59a92078, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  VendingMachineHub: {fileID: 702292630}
   DisplayText: {fileID: 1917325760}
 --- !u!114 &2040139149
 MonoBehaviour:

@@ -12,9 +12,11 @@ public class VMHub : MonoBehaviour
     public LifeSystem Playerlives;
     public TimeSystem Playertime;
     public TextMeshProUGUI DisplayTimer;
-    public VMButtons button;
+    public VMButtons PanelButton;
     private bool GameOver;
-     
+    private int DisplayDigits=-1;
+    private int RandomDigits;
+    private bool Enter = false;
 
     
     // Start is called before the first frame update
@@ -22,6 +24,11 @@ public class VMHub : MonoBehaviour
     {
         GameOver = false;
         Playertime.setTime(10);
+        System.Random RND = new System.Random();
+        RandomDigits = RND.Next(0000, 9999);
+        Debug.Log(RandomDigits);
+
+
     }
 
     // Update is called once per frame
@@ -33,11 +40,20 @@ public class VMHub : MonoBehaviour
 
             DisplayTimer.text = "Seconds left: " + Playertime.getIntTime().ToString();
 
-            if(Playertime.getIntTime() <= 0)
+            if (Enter == true)
+            {
+                if (DisplayDigits == RandomDigits)
+                {
+                    VendingMachineFailed();
+                    Playerlives.changeLives(1); //Loses a life (Substitude the parameter with the returned lives from different scenes.
+                }
+            }
+            else if (Playertime.getIntTime() <= 0)
             {
                 VendingMachineFailed();
                 Playerlives.changeLives(1); //Loses a life (Substitude the parameter with the returned lives from different scenes.
             }
+            
         }
         
     }
@@ -46,5 +62,11 @@ public class VMHub : MonoBehaviour
     {
         GameOver = true;
         Debug.Log("Vending machine minigame failed!");
+    }
+
+    public void PressedEnter(int digits) //The EnterButton is pressed
+    {
+        DisplayDigits = digits;
+        Enter = true;
     }
 }
