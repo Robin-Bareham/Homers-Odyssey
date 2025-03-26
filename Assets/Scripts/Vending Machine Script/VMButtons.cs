@@ -21,7 +21,7 @@ public class VMButtons : MonoBehaviour
         
     }
     */
-    public VMHub VM_Hub;
+    
     public TextMeshProUGUI DisplayText;
 
     public void DoThing() //Ignore this
@@ -68,7 +68,7 @@ public class VMButtons : MonoBehaviour
         else //Loses the minigame!
         {
             Debug.Log("Potential loss?");
-            VM_Hub.ButtonFailed();
+            
         }
 
     }

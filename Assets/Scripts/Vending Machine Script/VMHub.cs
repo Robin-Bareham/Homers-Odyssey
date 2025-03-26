@@ -9,6 +9,8 @@ using System;
 
 public class VMHub : MonoBehaviour
 {
+    public LifeSystem Playerlives;
+    public TimeSystem Playertime;
     public TextMeshProUGUI DisplayTimer;
     private int timer= 10;
     private float TempTimer = 0f;
@@ -19,7 +21,7 @@ public class VMHub : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {       
-        LifeSystem Playerlives = new LifeSystem();
+        
     }
 
     // Update is called once per frame
@@ -27,7 +29,8 @@ public class VMHub : MonoBehaviour
     {
         while (GameOver == false)
         {
-            Countdown(); //Starts the countdown
+            Playertime.updateTimer(); //Updates countdown
+            DisplayTimer.text = "Seconds left: " + Playertime.getIntTime();
         }
         
     }
