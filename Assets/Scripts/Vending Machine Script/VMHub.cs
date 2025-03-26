@@ -28,7 +28,7 @@ public class VMHub : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        while (GameOver == false)
+        if (GameOver == false)
         {
             Playertime.updateTimer(); //Updates countdown
 
@@ -37,7 +37,7 @@ public class VMHub : MonoBehaviour
         
     }
 
-    private void Countdown() 
+    /*private void Countdown() 
     {
         TempTimer += Time.deltaTime;
 
@@ -55,7 +55,7 @@ public class VMHub : MonoBehaviour
             }
         }
         //Else the suborutine does nothing until TempTime has reached/passed a second
-    }
+    }*/
 
     public void ButtonFailed() //A seperate button script will run this in the event they pressed the entered number
     {
