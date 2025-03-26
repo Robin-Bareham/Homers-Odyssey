@@ -7,20 +7,21 @@ using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
     //Public:
-    public GameObject rod;
-    public Transform spawn_point;
+    public GameObject rod; //Rods
+    public Transform spawn_point; //Spawning area
     public GameObject instruction_ui;
     public GameObject timer_ui;
     public GameObject score_ui;
     public TextMeshProUGUI seconds_left;
-    public float max_x;
-    public float rod_timer = 0;
-    public float action = 50;
-    public float seconds = 100;
-    public LifeSystem life_system;
+    public float max_x; //Limits for Rods Spawn
+    public float rod_timer = 0; //Rod spawning timer
+    public float action = 50; // Rod spawning timer
+    public float seconds = 100; //Seconds to complete minigame
+    public LifeSystem life_system; //Life Scripts
+    public TimeSystem time_system; // Time Script
     //Private:
     private float additive;
-    private bool first_time= true;
+    private bool first_time= true; //First time activating
     private bool minigame_over = false;
     private bool won = false;
     private int lives = 3;
@@ -35,28 +36,28 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (!minigame_over) 
+        if (!minigame_over) //If it's not ended
         {
-            if (rod_timer > 3) 
+            if (rod_timer > 3) //After 3 seconds hide UI
             { instruction_ui.SetActive(false); }
-            if (rod_timer > action)
+            if (rod_timer > action) //After time spawn a rod
             {
                 spawnRod();
                 action += additive;
-                if (first_time)
+                if (first_time) // After spawning first rod, also show timer + score UI
                 {
-                    
                     timer_ui.SetActive(true);
                     score_ui.SetActive(true);
+                    time_system.setTime(seconds);
+
                     first_time = false;
                 }
             }
             if (first_time == false) // Shows countdown timer
             {
-                seconds -= Time.deltaTime;
-                int temp_visual = (int)seconds;
-                seconds_left.text = temp_visual.ToString();
-                if (temp_visual <= 0)
+                time_system.updateTimer();
+                seconds_left.text = time_system.getIntTime().ToString();
+                if(time_system.getTimeOver() == true) 
                 {
                     seconds_left.text = "0";
                     minigame_over = true;
