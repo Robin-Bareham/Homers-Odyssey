@@ -195,7 +195,8 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Slider Minigame Background_0: 5795311976628884815
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
