@@ -44,6 +44,7 @@ public class VMButtons : MonoBehaviour
     public void Clear() //Self explanatory
     {
         DisplayText.text = "";
+        
     }
 
     public void Enter() //Self explanatory

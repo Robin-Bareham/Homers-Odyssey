@@ -38,20 +38,25 @@ public class VMHub : MonoBehaviour
         {
             Playertime.updateTimer(); //Updates countdown
 
-            DisplayTimer.text = "Seconds left: " + Playertime.getIntTime().ToString();
+            DisplayTimer.text = Playertime.getIntTime().ToString();
 
             if (Enter == true)
             {
                 if (DisplayDigits == RandomDigits)
                 {
-                    VendingMachineFailed();
-                    Playerlives.changeLives(1); //Loses a life (Substitude the parameter with the returned lives from different scenes.
+                    VendingMachinePassed();                   
                 }
+                else
+                {
+                    VendingMachineFailed();
+                    Playerlives.changeLives(1); //Loses a life (Substitude the parameter with the returned lives from different scenes.)
+                }
+
             }
             else if (Playertime.getIntTime() <= 0)
             {
                 VendingMachineFailed();
-                Playerlives.changeLives(1); //Loses a life (Substitude the parameter with the returned lives from different scenes.
+                Playerlives.changeLives(1); //Loses a life (Substitude the parameter with the returned lives from different scenes.)
             }
             
         }
@@ -62,6 +67,12 @@ public class VMHub : MonoBehaviour
     {
         GameOver = true;
         Debug.Log("Vending machine minigame failed!");
+    }
+
+    public void VendingMachinePassed()
+    {
+        GameOver = true;
+        Debug.Log("Won the vending machine minigame!");
     }
 
     public void PressedEnter(int digits) //The EnterButton is pressed
