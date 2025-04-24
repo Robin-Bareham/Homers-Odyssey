@@ -67,23 +67,5 @@ public class playerInput : MonoBehaviour
         }
     }
 
-    private void OnTriggerEnter2D(Collider2D other)
-{
-    if (selectedSlider != null)
-    {
-        Debug.Log("OnTriggerEnter2D with: " + other.gameObject.name);
-
-        if (other.gameObject == blueGuide && selectedSlider == blueSlider)
-            Debug.Log("Blue slider is touching its guide");
-
-        else if (other.gameObject == greenGuide && selectedSlider == greenSlider)
-            Debug.Log("Green slider is touching its guide");
-
-        else if (other.gameObject == redGuide && selectedSlider == redSlider)
-            Debug.Log("Red slider is touching its guide");
-            
-        else if (other.gameObject == yellowGuide && selectedSlider == yellowSlider)
-            Debug.Log("Yellow slider is touching its guide");
-    }
-}
+    
 }

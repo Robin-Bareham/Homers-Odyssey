@@ -12,6 +12,17 @@ public class manager : MonoBehaviour
     public TextMeshProUGUI DisplayTimer;
     public TimeSystem timer;
     public LifeSystem lifeSystem;
+
+    public blueGuideDetection blue_light;
+    public greenGuideDetection green_light;
+    public redGuideDetection red_light;
+    public yellowGuideDetection yellow_light;
+
+    
+
+    
+
+
     bool game = true;
     int lifeCap = 0;
     
@@ -20,6 +31,10 @@ public class manager : MonoBehaviour
     void Start()
     {
        timer.setTime(20);
+       blue_light.enabled = false;
+       green_light.enabled = false;
+       red_light.enabled = false;
+       yellow_light.enabled = false;
     }
 
     // Update is called once per frame
@@ -42,6 +57,16 @@ public class manager : MonoBehaviour
                 timer.setTime(-1);
             }
 
+            if(blue_light.inZone)
+            {
+                blue_light.enabled = true;
+            }
+
+            if(green_light.inZone)
+            {
+                green_light = true;
+            }
+
 
            
         }
@@ -50,7 +75,7 @@ public class manager : MonoBehaviour
         {
             
 
-            if (lifeSystem.timeLoss());
+            if (lifeSystem.timeLoss())
             {
 
                 while(lifeCap < 1)
