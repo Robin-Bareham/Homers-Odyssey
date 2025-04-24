@@ -245,8 +245,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d4f5b438c31d73e4dac481ee2184eb33, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  DisplayTimer: {fileID: 1923072459}
   timer: {fileID: 1821413786}
-  lifeSysytem: {fileID: 852710798}
+  lifeSystem: {fileID: 852710798}
 --- !u!4 &132005348
 Transform:
   m_ObjectHideFlags: 0
@@ -1103,6 +1104,10 @@ PrefabInstance:
       value: Lives Manager
       objectReference: {fileID: 0}
     - target: {fileID: 4539739224058857928, guid: 8086652b4bb831e46ae879ab226e600b, type: 3}
+      propertyPath: timer
+      value: 
+      objectReference: {fileID: 1821413786}
+    - target: {fileID: 4539739224058857928, guid: 8086652b4bb831e46ae879ab226e600b, type: 3}
       propertyPath: heart1
       value: 
       objectReference: {fileID: 472343740}
@@ -1528,6 +1533,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 88ee0cb921e339340a3008f1949f1b7f, type: 3}
+--- !u!114 &1923072459 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5146137553901636389, guid: 88ee0cb921e339340a3008f1949f1b7f, type: 3}
+  m_PrefabInstance: {fileID: 1923072458}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

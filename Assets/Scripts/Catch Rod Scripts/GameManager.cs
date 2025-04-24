@@ -81,7 +81,7 @@ public class GameManager : MonoBehaviour
         minigame_over = value;
         if(value == true)
         {
-            life_system.changeLives(lives);
+            life_system.changeLives();
             lives--;
             //Move scene onto next game
         }

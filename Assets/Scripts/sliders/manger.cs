@@ -9,15 +9,17 @@ using System;
 public class manager : MonoBehaviour
 {
     
-    
+    public TextMeshProUGUI DisplayTimer;
     public TimeSystem timer;
-    public LifeSystem lifeSysytem;
+    public LifeSystem lifeSystem;
     bool game = true;
+    int lifeCap = 0;
+    bool loss = false;
 
     // Start is called before the first frame update
     void Start()
     {
-        timer.setTime(2);
+       timer.setTime(2);
     }
 
     // Update is called once per frame
@@ -27,6 +29,7 @@ public class manager : MonoBehaviour
         {
             //updates timer (1 tick per sec)
             timer.updateTimer();
+            DisplayTimer.text = timer.getIntTime().ToString();
 
             // checks if time is over;
             bool timeOver = timer.getTimeOver();
@@ -35,13 +38,38 @@ public class manager : MonoBehaviour
             if(timeOver)
             {
                 Debug.Log("time over");
+
+                
+                
                 game = false;
+
+                timer.setTime(-1);
             }
         }
 
         else if (!game)
         {
+            
+
+            if (lifeSystem.timeLoss());
+            {
+
+                while(lifeCap < 1)
+                {
+                lifeSystem.lives = lifeSystem.lives -1;
+                lifeSystem.changeLives();
+                Debug.Log("Lives: " + lifeSystem.lives);
+                lifeCap ++;
+                }
+                
+                    
+            }
+                
+                
+            
+            
             SceneManager.LoadScene("Catch Uranium", LoadSceneMode.Single);
+            
         }
         
     }

@@ -49,14 +49,14 @@ public class VMHub : MonoBehaviour
                 else
                 {
                     VendingMachineFailed();
-                    Playerlives.changeLives(1); //Loses a life (Substitude the parameter with the returned lives from different scenes.)
+                    Playerlives.changeLives(); //Loses a life (Substitude the parameter with the returned lives from different scenes.)
                 }
 
             }
             else if (Playertime.getIntTime() <= 0)
             {
                 VendingMachineFailed();
-                Playerlives.changeLives(1); //Loses a life (Substitude the parameter with the returned lives from different scenes.)
+                Playerlives.changeLives(); //Loses a life (Substitude the parameter with the returned lives from different scenes.)
             }
             
         }
