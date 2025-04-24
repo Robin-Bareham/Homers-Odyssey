@@ -45,7 +45,7 @@ public class playerInput : MonoBehaviour
                 {
                     blueSlider.MovePosition(new Vector2(blueSlider.position.x, mouseWorldPosition.y));
                 }
-                
+
                 else if (hit.collider.CompareTag("green bar"))
                 {
                     greenSlider.MovePosition(new Vector2(greenSlider.position.x, mouseWorldPosition.y));
@@ -70,11 +70,13 @@ public class playerInput : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.tag == "guide")
-        {
-            
         
-            
+    }
+
+    private void GuideCollision()
+    {
+        //if (collision.gameObject.tag == "guide")
+        {
             
         }
     }
