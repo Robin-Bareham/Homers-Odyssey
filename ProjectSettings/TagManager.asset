@@ -42,3 +42,18 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: back
+    uniqueID: 3431433803
+    locked: 0
+  - name: bars
+    uniqueID: 4164643807
+    locked: 0
+  - name: sliders
+    uniqueID: 3811875733
+    locked: 0
+  - name: guide
+    uniqueID: 2556497529
+    locked: 0
+  - name: UI
+    uniqueID: 3318507773
+    locked: 0

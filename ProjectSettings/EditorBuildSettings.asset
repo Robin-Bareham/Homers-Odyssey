@@ -5,7 +5,17 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/SampleScene.unity
     guid: 2cda990e2423bbf4892e6590ba056729
+  - enabled: 1
+    path: Assets/Scenes/Power Plant Sliders.unity
+    guid: aeb50d5ee42a2e049901ad2a7ecf4fba
+  - enabled: 1
+    path: Assets/Scenes/Catch Uranium.unity
+    guid: 3fc8acdd13e6c734bafef6554d6fdbcd
+  - enabled: 1
+    path: Assets/Scenes/Vending Machine.unity
+    guid: 5e28e3d80a1dca640831e38ad7b07232
   m_configObjects: {}
+  m_UseUCBPForAssetBundles: 0
