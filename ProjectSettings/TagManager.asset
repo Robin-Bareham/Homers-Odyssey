@@ -10,11 +10,20 @@ TagManager:
   - green bar
   - red bar
   - yellow bar
+  - back
+  - blueGuide
+  - greenGuide
+  - redGuide
+  - yellowGuide
+  - blueSlider
+  - greenSlider
+  - redSlider
+  - yellowSlider
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - contact
   - Water
   - UI
   - 

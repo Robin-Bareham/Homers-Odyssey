@@ -17,5 +17,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Vending Machine.unity
     guid: 5e28e3d80a1dca640831e38ad7b07232
-  m_configObjects: {}
+  m_configObjects:
+    com.unity.adaptiveperformance.simulator.provider_settings: {fileID: 11400000, guid: 5bf31abee54beb04f899e0358a2b7f1d, type: 2}
   m_UseUCBPForAssetBundles: 0
