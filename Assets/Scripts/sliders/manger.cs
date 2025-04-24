@@ -3,98 +3,101 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using TMPro;
-using Unity.VisualScripting;
-using System;
 
 public class manager : MonoBehaviour
 {
-    
     public TextMeshProUGUI DisplayTimer;
     public TimeSystem timer;
     public LifeSystem lifeSystem;
 
-    public blueGuideDetection blue_light;
-    public greenGuideDetection green_light;
-    public redGuideDetection red_light;
-    public yellowGuideDetection yellow_light;
+    public GameObject blueGuide;
+    public GameObject greenGuide;
+    public GameObject redGuide;
+    public GameObject yellowGuide;
 
-    
-
-    
-
+    public blueGuideDetection blueBar;
+    public greenGuideDetection greenBar;
+    public redGuideDetection redBar;
+    public yellowGuideDetection yellowBar;
 
     bool game = true;
     int lifeCap = 0;
-    
 
-    // Start is called before the first frame update
     void Start()
     {
-       timer.setTime(20);
-       blue_light.enabled = false;
-       green_light.enabled = false;
-       red_light.enabled = false;
-       yellow_light.enabled = false;
+        timer.setTime(6);
+
+        float[] yPositions = { -1.7f, 1.9f, -0.5f, 0.6f };
+        System.Random rnd = new System.Random();
+
+        // Shuffle the yPositions array so each guide gets a unique Y
+        for (int i = 0; i < yPositions.Length; i++)
+        {
+            int randIndex = rnd.Next(i, yPositions.Length);
+            float temp = yPositions[i];
+            yPositions[i] = yPositions[randIndex];
+            yPositions[randIndex] = temp;
+        }
+
+        // Assign unique Y positions
+        SetYPosition(blueGuide, yPositions[0]);
+        SetYPosition(greenGuide, yPositions[1]);
+        SetYPosition(redGuide, yPositions[2]);
+        SetYPosition(yellowGuide, yPositions[3]);
     }
 
-    // Update is called once per frame
+    void SetYPosition(GameObject obj, float newY)
+    {
+        Vector3 pos = obj.transform.position;
+        pos.y = newY;
+        obj.transform.position = pos;
+    }
+
     void Update()
     {
-        if(game)
+        if (game)
         {
-            //updates timer (1 tick per sec)
             timer.updateTimer();
             DisplayTimer.text = timer.getIntTime().ToString();
-
-            // checks if time is over;
             bool timeOver = timer.getTimeOver();
 
-            // stops game updates if timer is depleated
-            if(timeOver)
+            if (timeOver)
             {
                 Debug.Log("time over");
                 game = false;
                 timer.setTime(-1);
             }
 
-            if(blue_light.inZone)
+            Debug.Log("Status - Blue: " + blueBar.inZone +
+                      " | Green: " + greenBar.inZone +
+                      " | Red: " + redBar.inZone +
+                      " | Yellow: " + yellowBar.inZone);
+
+            if (
+                blueBar != null && blueBar.inZone &&
+                greenBar != null && greenBar.inZone &&
+                redBar != null && redBar.inZone &&
+                yellowBar != null && yellowBar.inZone
+            )
             {
-                blue_light.enabled = true;
+                Debug.Log("should load new scene #########");
+                SceneManager.LoadScene("Catch Uranium", LoadSceneMode.Single);
             }
-
-            if(green_light.inZone)
-            {
-                green_light = true;
-            }
-
-
-           
         }
-
-        else if (!game)
+        else
         {
-            
-
-            if (lifeSystem.timeLoss())
+            if (lifeSystem != null && lifeSystem.timeLoss())
             {
-
-                while(lifeCap < 1)
+                while (lifeCap < 1)
                 {
-                lifeSystem.lives = lifeSystem.lives -1;
-                lifeSystem.changeLives();
-                Debug.Log("Lives: " + lifeSystem.lives);
-                lifeCap ++;
+                    lifeSystem.lives -= 1;
+                    lifeSystem.changeLives();
+                    Debug.Log("Lives: " + lifeSystem.lives);
+                    lifeCap++;
                 }
-                
-                    
             }
-                
-                
-            
-            
+
             SceneManager.LoadScene("Catch Uranium", LoadSceneMode.Single);
-            
         }
-        
     }
 }
