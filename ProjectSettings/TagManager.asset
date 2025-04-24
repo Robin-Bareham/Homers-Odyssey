@@ -5,6 +5,11 @@ TagManager:
   serializedVersion: 2
   tags:
   - Rod
+  - bar
+  - blue bar
+  - green bar
+  - red bar
+  - yellow bar
   layers:
   - Default
   - TransparentFX

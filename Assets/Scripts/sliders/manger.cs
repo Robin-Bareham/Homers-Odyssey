@@ -14,12 +14,12 @@ public class manager : MonoBehaviour
     public LifeSystem lifeSystem;
     bool game = true;
     int lifeCap = 0;
-    bool loss = false;
+    
 
     // Start is called before the first frame update
     void Start()
     {
-       timer.setTime(2);
+       timer.setTime(20);
     }
 
     // Update is called once per frame
@@ -38,13 +38,12 @@ public class manager : MonoBehaviour
             if(timeOver)
             {
                 Debug.Log("time over");
-
-                
-                
                 game = false;
-
                 timer.setTime(-1);
             }
+
+
+           
         }
 
         else if (!game)
