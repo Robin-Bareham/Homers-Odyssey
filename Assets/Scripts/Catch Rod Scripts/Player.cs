@@ -18,7 +18,7 @@ public class Player : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        score_text.text = score.ToString();
+        //score_text.text = score.ToString();
     }
 
     // Update is called once per frame
@@ -39,7 +39,7 @@ public class Player : MonoBehaviour
         if (collision.gameObject.tag == "Rod")
         {
             score++;
-            score_text.text = score.ToString();
+            //score_text.text = score.ToString();
             
             //Potential spot to add sounds of rods being collected
         }

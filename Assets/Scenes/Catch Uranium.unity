@@ -124,12 +124,17 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 5146137553901636389, guid: 88ee0cb921e339340a3008f1949f1b7f, type: 3}
   m_PrefabInstance: {fileID: 5526025884645635746}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 246092973}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &246092973 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5067419010731349969, guid: 88ee0cb921e339340a3008f1949f1b7f, type: 3}
+  m_PrefabInstance: {fileID: 5526025884645635746}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &264256051
 GameObject:
   m_ObjectHideFlags: 0
@@ -284,7 +289,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &356581417
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1182,13 +1187,13 @@ MonoBehaviour:
   rod: {fileID: 1853473908}
   spawn_point: {fileID: 550233328}
   instruction_ui: {fileID: 1374819678}
-  timer_ui: {fileID: 1953095467}
-  score_ui: {fileID: 0}
+  timer_ui: {fileID: 246092973}
+  score_ui: {fileID: 264256051}
   seconds_left: {fileID: 152916421}
   max_x: 6
   rod_timer: 0
-  action: 0.5
-  seconds: 5
+  action: 0.8
+  seconds: 9
   life_system: {fileID: 478311305}
   time_system: {fileID: 522718956}
 --- !u!4 &1087748444
@@ -1507,6 +1512,50 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &1802914559
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1802914561}
+  - component: {fileID: 1802914560}
+  m_Layer: 0
+  m_Name: MainManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1802914560
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1802914559}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a37c863d1dda3d242b1125edff4fe1af, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &1802914561
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1802914559}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 327.92072, y: 339.3741, z: -4.0238595}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1847859112 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 2770530497465447587, guid: 12275245dc440cd49b45ae641be1d76c, type: 3}
@@ -1531,7 +1580,7 @@ GameObject:
   - component: {fileID: 1853473911}
   - component: {fileID: 1853473910}
   - component: {fileID: 1853473909}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Rod for Copying
   m_TagString: Rod
   m_Icon: {fileID: 0}
@@ -1829,11 +1878,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1934137979}
   m_CullTransparentMesh: 1
---- !u!1 &1953095467 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4956464307828085275, guid: 88ee0cb921e339340a3008f1949f1b7f, type: 3}
-  m_PrefabInstance: {fileID: 5526025884645635746}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1980144354
 GameObject:
   m_ObjectHideFlags: 0
@@ -2050,7 +2094,7 @@ Transform:
   m_GameObject: {fileID: 2028059791}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.98, y: -0.11, z: 0}
+  m_LocalPosition: {x: 0.98, y: -0.11, z: 3}
   m_LocalScale: {x: 5.961172, y: 5.961172, z: 5.961172}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2073,6 +2117,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Lives Manager
       objectReference: {fileID: 0}
+    - target: {fileID: 4539739224058857928, guid: 8086652b4bb831e46ae879ab226e600b, type: 3}
+      propertyPath: timer
+      value: 
+      objectReference: {fileID: 522718956}
     - target: {fileID: 4539739224058857928, guid: 8086652b4bb831e46ae879ab226e600b, type: 3}
       propertyPath: heart1
       value: 
@@ -2471,6 +2519,7 @@ SceneRoots:
   - {fileID: 7944021688825408970}
   - {fileID: 1269317638679623370}
   - {fileID: 5526025884645635746}
+  - {fileID: 2028059793}
   - {fileID: 550233328}
   - {fileID: 1418206200}
   - {fileID: 825347292}
@@ -2480,4 +2529,4 @@ SceneRoots:
   - {fileID: 1374819682}
   - {fileID: 356581420}
   - {fileID: 591752145}
-  - {fileID: 2028059793}
+  - {fileID: 1802914561}

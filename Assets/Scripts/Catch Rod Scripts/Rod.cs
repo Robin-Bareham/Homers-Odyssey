@@ -5,7 +5,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 public class Rod : MonoBehaviour
 {
-    private bool failed = false;
+    //private bool failed = false;
     public GameManager gameManager;
     private void Start()
     {
@@ -13,12 +13,12 @@ public class Rod : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (gameManager.getMinigameOver()) 
-        { Destroy(gameObject); }
+        //If the rod is bellow the screen
         if(transform.position.y < -7f) 
         {
+            //set the minigame to have failed
             Destroy(gameObject);
-            failed = true;
+            //failed = true;
             gameManager.setMinigameFailed(true); //Alerts GameManager minigame has failed
         }
     }
@@ -27,10 +27,6 @@ public class Rod : MonoBehaviour
         if (collision.gameObject.tag == "Player")
         {
             Destroy(gameObject); //Destroys rods on contact
-
-            //Another potential spot to add sound file of rods being collected
         }
     }
-
-    public bool getFailed() {  return failed; }
 }

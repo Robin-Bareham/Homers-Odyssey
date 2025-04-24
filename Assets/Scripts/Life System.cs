@@ -81,13 +81,14 @@ public class LifeSystem : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        lives = 3;
-        heart1.enabled = true;
-        heart2.enabled = true;
-        heart3.enabled = true;
-        heart_gone1.enabled = false;
-        heart_gone2.enabled = false;
-        heart_gone3.enabled = false;
+        lives = mainManagerGetLives();
+        changeLives();
+        //heart1.enabled = true;
+        //heart2.enabled = true;
+        //heart3.enabled = true;
+        //heart_gone1.enabled = false;
+        //heart_gone2.enabled = false;
+        //heart_gone3.enabled = false;
     }
 
     // Update is called once per frame
@@ -133,11 +134,26 @@ public class LifeSystem : MonoBehaviour
 
             Debug.Log("Game Over");
         }
+        mainManagerSetLives();
     }
 
     public int getLives()
     {
         return lives;
+    }
+    public void setLives(int new_lives)
+    { 
+        //Sets the lives to be displayed
+        lives = new_lives; 
+    }
+    public int mainManagerGetLives() 
+    {
+        return MainManager.Instance.getLives();
+    }
+    public void mainManagerSetLives() 
+    {
+        //Sends the lives to the Main manager
+        MainManager.Instance.setLives(lives);
     }
 
     // for VM and sliders game
