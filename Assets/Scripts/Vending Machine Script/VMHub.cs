@@ -12,9 +12,11 @@ public class VMHub : MonoBehaviour
     public LifeSystem Playerlives;
     public TimeSystem Playertime;
     public TextMeshProUGUI DisplayTimer;
+    public TextMeshProUGUI Instruction;
     public VMButtons PanelButton;
     public VMItem TestItem;
     private bool GameOver;
+    private float InstructionTimer=0;
     private int DisplayDigits=-1;
     private int RandomDigits;
     private bool Enter = false;
@@ -25,11 +27,6 @@ public class VMHub : MonoBehaviour
     {
         GameOver = false;
         Playertime.setTime(10);
-        System.Random RND = new System.Random();
-        RandomDigits = RND.Next(0000, 10000); //Includes the starting number, excludes end number.
-        Debug.Log(RandomDigits);
-        
-
     }
 
     // Update is called once per frame
@@ -38,12 +35,13 @@ public class VMHub : MonoBehaviour
         if (GameOver == false)
         {
             Playertime.updateTimer(); //Updates countdown
+            DisplayTimer.text = Playertime.getIntTime().ToString(); //Displays timer left
 
-            DisplayTimer.text = Playertime.getIntTime().ToString();
+            InstructionGuide();
 
             if (Enter == true)
             {
-                if (DisplayDigits == RandomDigits)
+                if (DisplayDigits == TestItem.GameDigits())
                 {
                     VendingMachinePassed();                   
                 }
@@ -85,5 +83,19 @@ public class VMHub : MonoBehaviour
     {
         DisplayDigits = digits;
         Enter = true;
+    }
+
+    public void InstructionGuide()
+    {
+        InstructionTimer += Time.deltaTime;
+        if(InstructionTimer < 3)
+        {
+            Instruction.text = "Get the Donut!!";
+            Debug.Log("Get the Donut!!");
+        }
+        else
+        {
+            Instruction.gameObject.SetActive(false);
+        }
     }
 }

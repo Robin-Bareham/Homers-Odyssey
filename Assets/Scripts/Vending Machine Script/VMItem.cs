@@ -26,8 +26,7 @@ public class VMItem : MonoBehaviour
     public GameObject ItemHolder9;
 
     private GameObject[] Items;
-
-    private int AnswerDigits;
+    private int TrueDigits;
     private int DonutPositon;
     private int RandomItemImage;
 
@@ -40,21 +39,12 @@ public class VMItem : MonoBehaviour
 
         for(int i = 0; i < 9; i++)
         {
-            RandomItem(Items[i]);
+            RandomItem(Items[i]); //Calls the subroutine to give each object an image
         }
-        /*RandomItem(ItemHolder1);
-        RandomItem(ItemHolder2);
-        RandomItem(ItemHolder3);
-        RandomItem(ItemHolder4);
-        RandomItem(ItemHolder5);
-        RandomItem(ItemHolder6);
-        RandomItem(ItemHolder7);
-        RandomItem(ItemHolder8);
-        RandomItem(ItemHolder9); */
 
         System.Random RND = new System.Random();
         DonutPositon = RND.Next(0, 9);
-        RandomDonut(Items[DonutPositon]);
+        RandomDonut(Items[DonutPositon]); //Randomises a position to give a donut
     }
 
     // Update is called once per frame
@@ -93,6 +83,56 @@ public class VMItem : MonoBehaviour
         SpriteRenderer sr = ChosenItem.GetComponent<SpriteRenderer>();
         sr.sprite = Donut;
         ChosenItem.transform.localScale = new Vector3(0.2f, 0.2f, 1f);
+
+        switch (DonutPositon+1)
+        {
+            case 1:
+                TrueDigits = 9075;
+                Debug.Log("Digit: " + 9075);
+                break;
+            case 2:
+                TrueDigits = 7086;
+                Debug.Log("Digit: " + 7086);
+                break;
+            case 3:
+                TrueDigits = 1091;
+                Debug.Log("Digit: " + 1091);
+                break;
+            case 4:
+                TrueDigits = 5041;
+                Debug.Log("Digit: " + 5041);
+                break;
+            case 5:
+                TrueDigits = 2050;
+                Debug.Log("Digit: " + 2050);
+                break;
+            case 6:
+                TrueDigits = 0636;
+                Debug.Log("Digit: " + 0636);
+                break;
+            case 7:
+                TrueDigits = 0102;
+                Debug.Log("Digit: " + 0102);
+                break;
+            case 8:
+                TrueDigits = 3024;
+                Debug.Log("Digit: " + 3024);
+                break;
+            case 9:
+                TrueDigits = 0305;
+                Debug.Log("Digit: " + 0305);
+                break;
+
+        }
+
+        
+    }
+
+    public int GameDigits()
+    {
+
+        return TrueDigits;
+
     }
 
  

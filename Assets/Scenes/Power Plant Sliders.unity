@@ -1961,7 +1961,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a37c863d1dda3d242b1125edff4fe1af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  score: 0
 --- !u!4 &1201200106
 Transform:
   m_ObjectHideFlags: 0
@@ -2422,19 +2421,19 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2601877848614734063, guid: 88ee0cb921e339340a3008f1949f1b7f, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -475
+      value: -476
       objectReference: {fileID: 0}
     - target: {fileID: 2601877848614734063, guid: 88ee0cb921e339340a3008f1949f1b7f, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 247
+      value: 244
       objectReference: {fileID: 0}
     - target: {fileID: 3156075536570901930, guid: 88ee0cb921e339340a3008f1949f1b7f, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -410
+      value: -411
       objectReference: {fileID: 0}
     - target: {fileID: 3156075536570901930, guid: 88ee0cb921e339340a3008f1949f1b7f, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 241
+      value: 236
       objectReference: {fileID: 0}
     - target: {fileID: 4956464307828085275, guid: 88ee0cb921e339340a3008f1949f1b7f, type: 3}
       propertyPath: m_Name
