@@ -27,13 +27,22 @@ public class MainManager : MonoBehaviour
         DontDestroyOnLoad(gameObject);
     }
 
+    public void resetValues() { 
+    score = 0;
+    lives = 3;
+    game_over = false;
+    timing = 1;
+    multiplication = 0.9f;
+    timeNum = 0;
+}
     
     public int getScore() { return score; }
     public int getLives()  { return lives; }
     public void setLives(int t_lives) {  lives = t_lives;
-        if (lives >= 0) 
+        if (lives <= 0) 
         {
             game_over = true;
+            SceneManager.LoadScene("Game Over", LoadSceneMode.Single);
         }
     }
 
