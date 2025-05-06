@@ -7,6 +7,7 @@ using TMPro;
 public class manager : MonoBehaviour
 {
     public TextMeshProUGUI DisplayTimer;
+    public TextMeshProUGUI ScoreText;
     public TimeSystem timer;
     public LifeSystem lifeSystem;
 
@@ -26,7 +27,7 @@ public class manager : MonoBehaviour
     void Start()
     {
         timer.setTime(6 * MainManager.Instance.getTiming());
-
+        ScoreText.text = MainManager.Instance.getScore().ToString();
         float[] yPositions = { -1.7f, 1.9f, -0.5f, 0.6f };
         System.Random rnd = new System.Random();
 

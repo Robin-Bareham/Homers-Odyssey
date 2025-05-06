@@ -11,7 +11,7 @@ public class GameManager : MonoBehaviour
     public Transform spawn_point; //Spawning area
     public GameObject instruction_ui;
     public GameObject timer_ui;
-    public GameObject score_ui;
+    public TextMeshProUGUI score_txt;
     public TextMeshProUGUI seconds_left;
     public float max_x; //Limits for Rods Spawn
     public float rod_timer = 0; //Rod spawning timer
@@ -27,10 +27,10 @@ public class GameManager : MonoBehaviour
         
         instruction_ui.SetActive(true);
         timer_ui.SetActive(true);
-        score_ui.SetActive(true);
         action = action * (MainManager.Instance.getTiming() /1.1f);
         additive = action;
         seconds_left.text = seconds.ToString();
+        score_txt.text = (MainManager.Instance.getScore()).ToString();
         Debug.Log("MainManager in Game: " + MainManager.Instance.getTiming());
         time_system.setTime(seconds);
     }

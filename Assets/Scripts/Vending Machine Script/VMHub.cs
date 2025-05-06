@@ -13,6 +13,7 @@ public class VMHub : MonoBehaviour
     public TimeSystem Playertime;
     public TextMeshProUGUI DisplayTimer;
     public TextMeshProUGUI Instruction;
+    public TextMeshProUGUI ScoreText;
     public VMButtons PanelButton;
     public VMItem TestItem;
     private bool GameOver;
@@ -27,6 +28,7 @@ public class VMHub : MonoBehaviour
     {
         GameOver = false;
         Playertime.setTime(6 * MainManager.Instance.getTiming());
+        ScoreText.text = (MainManager.Instance.getScore().ToString());
     }
 
     // Update is called once per frame
