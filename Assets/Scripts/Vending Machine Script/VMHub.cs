@@ -13,6 +13,7 @@ public class VMHub : MonoBehaviour
     public TimeSystem Playertime;
     public TextMeshProUGUI DisplayTimer;
     public VMButtons PanelButton;
+    public VMItem TestItem;
     private bool GameOver;
     private int DisplayDigits=-1;
     private int RandomDigits;
@@ -25,9 +26,9 @@ public class VMHub : MonoBehaviour
         GameOver = false;
         Playertime.setTime(10);
         System.Random RND = new System.Random();
-        RandomDigits = RND.Next(0000, 9999);
+        RandomDigits = RND.Next(0000, 10000); //Includes the starting number, excludes end number.
         Debug.Log(RandomDigits);
-
+        
 
     }
 
@@ -67,12 +68,17 @@ public class VMHub : MonoBehaviour
     {
         GameOver = true;
         Debug.Log("Vending machine minigame failed!");
+        //Decreases the lives by one
+        Playerlives.setLives(Playerlives.getLives() - 1);
+        Playerlives.changeLives(); //Update visuals
+        SceneManager.LoadScene("Power Plant Sliders", LoadSceneMode.Single);
     }
 
     public void VendingMachinePassed()
     {
         GameOver = true;
         Debug.Log("Won the vending machine minigame!");
+        SceneManager.LoadScene("Power Plant Sliders", LoadSceneMode.Single);
     }
 
     public void PressedEnter(int digits) //The EnterButton is pressed
