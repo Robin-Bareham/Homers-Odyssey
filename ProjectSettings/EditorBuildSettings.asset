@@ -9,6 +9,9 @@ EditorBuildSettings:
     path: Assets/Scenes/SampleScene.unity
     guid: 2cda990e2423bbf4892e6590ba056729
   - enabled: 1
+    path: Assets/Scenes/Menu.unity
+    guid: 761bb156406db9244a1b7ef99df4b631
+  - enabled: 1
     path: Assets/Scenes/Power Plant Sliders.unity
     guid: aeb50d5ee42a2e049901ad2a7ecf4fba
   - enabled: 1
@@ -20,9 +23,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Game Over.unity
     guid: e5e2a6f1f7db9e64882ffbd4e60e67f6
-  - enabled: 1
-    path: Assets/Scenes/Menu.unity
-    guid: 761bb156406db9244a1b7ef99df4b631
   m_configObjects:
     com.unity.adaptiveperformance.simulator.provider_settings: {fileID: 11400000, guid: 5bf31abee54beb04f899e0358a2b7f1d, type: 2}
   m_UseUCBPForAssetBundles: 0
