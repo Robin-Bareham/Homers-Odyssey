@@ -25,7 +25,7 @@ public class manager : MonoBehaviour
 
     void Start()
     {
-        timer.setTime(6);
+        timer.setTime(6 * MainManager.Instance.getTiming());
 
         float[] yPositions = { -1.7f, 1.9f, -0.5f, 0.6f };
         System.Random rnd = new System.Random();
@@ -80,6 +80,8 @@ public class manager : MonoBehaviour
                 yellowBar != null && yellowBar.inZone
             )
             {
+                MainManager.Instance.setScore(MainManager.Instance.getScore() + 1);
+                Debug.Log("score : " + MainManager.Instance.getScore());
                 Debug.Log("should load new scene #########");
                 SceneManager.LoadScene("Catch Uranium", LoadSceneMode.Single);
             }

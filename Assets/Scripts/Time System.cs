@@ -38,4 +38,10 @@ public class TimeSystem : MonoBehaviour
             time_over = true; //Time over has occoured
         }
     }
+
+    public void changeTime() 
+    {
+        
+        max_time = max_time * MainManager.Instance.getTiming();
+    }
 }

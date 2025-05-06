@@ -24,21 +24,20 @@ public class GameManager : MonoBehaviour
     private bool first_time= true; //First time activating
     private void Start()
     {
-        additive = action;
+        
         instruction_ui.SetActive(true);
         timer_ui.SetActive(true);
         score_ui.SetActive(true);
+        action = action * (MainManager.Instance.getTiming() /1.1f);
+        additive = action;
         seconds_left.text = seconds.ToString();
+        Debug.Log("MainManager in Game: " + MainManager.Instance.getTiming());
+        time_system.setTime(seconds);
     }
     // Update is called once per frame
     void Update()
     {
 
-            if (first_time) //Start timer 
-            {
-                time_system.setTime(seconds);
-                first_time = false;
-            }
             if (rod_timer > 3) //After 3 seconds hide UI
             { instruction_ui.SetActive(false); }
             if (rod_timer > action) //Spawn rods at intervals.
@@ -54,6 +53,7 @@ public class GameManager : MonoBehaviour
             {
               //The player won the game, moves onto next scene
               seconds_left.text = "0";
+              MainManager.Instance.setScore(MainManager.Instance.getScore() + 1);
               SceneManager.LoadScene("Vending Machine", LoadSceneMode.Single);
             }
             rod_timer += Time.deltaTime; //Increases rod timer

@@ -26,7 +26,7 @@ public class VMHub : MonoBehaviour
     void Start()
     {
         GameOver = false;
-        Playertime.setTime(10);
+        Playertime.setTime(6 * MainManager.Instance.getTiming());
     }
 
     // Update is called once per frame
@@ -75,6 +75,7 @@ public class VMHub : MonoBehaviour
     public void VendingMachinePassed()
     {
         GameOver = true;
+        MainManager.Instance.setScore(MainManager.Instance.getScore() + 1);
         Debug.Log("Won the vending machine minigame!");
         SceneManager.LoadScene("Power Plant Sliders", LoadSceneMode.Single);
     }
